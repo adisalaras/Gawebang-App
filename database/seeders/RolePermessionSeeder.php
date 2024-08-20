@@ -34,7 +34,7 @@ class RolePermessionSeeder extends Seeder
                 'name'=> $permission
             ]); //simpan permision di tabel permission spatie
         }
-        $clientRole = Role::firstOrCreat([
+        $clientRole = Role::firstOrCreate([
             'name' => 'project_client'
         ]);
         
@@ -45,9 +45,9 @@ class RolePermessionSeeder extends Seeder
             'topup wallet',
             'withdraw wallet',
         ];
-        $clientRole->synPermisions($clientPermissions);
+        $clientRole->syncPermissions($clientPermissions);
 
-        $freelancerRole = Role::firstOrCreat([
+        $freelancerRole = Role::firstOrCreate([
             'name' => 'project_freelancer'
         ]);
         
@@ -55,7 +55,7 @@ class RolePermessionSeeder extends Seeder
             'apply job',
             'withdraw wallet',
         ];
-        $freelancerRole->synPermisions($freelancerPermissions);
+        $freelancerRole->syncPermissions($freelancerPermissions);
 
         $superAdminRole = Role::firstOrCreate(['name'=>'super_admin']);
 
